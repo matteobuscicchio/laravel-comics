@@ -28,12 +28,11 @@
                 <td>{{$comic->cover}}</td>
                 <td>
                     @if($comic->availability === 1)
-                        disponibile
+                    available
                         @else
-                            non disponibile
+                            not available
                     @endif
                 </td>
-                <!-- <td>{{$comic->availability}}</td> -->
             </tr>
             @endforeach
         </tbody>
