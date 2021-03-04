@@ -26,13 +26,27 @@
                     <td>{{$comic->price}}</td>
                     <td>{{$comic->release_date}}</td>
                     <td>{{$comic->cover}}</td>
-                    <td>
+                    <td> <!-- availability -->
                         @if($comic->availability === 1)
                             available
 
                             @else
                             not available
                         @endif
+                    </td>
+                    <td>
+                        <div class="dropdown open">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Option
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" href="{{ route('admin.comics.edit', $comic) }}">Edit</a>
+                                <a class="dropdown-item" href="{{ route('admin.comics.show', $comic) }}">Show</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Delete</a>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach
