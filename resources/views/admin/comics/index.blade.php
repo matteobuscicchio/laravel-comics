@@ -17,23 +17,24 @@
         </thead>
         <tbody>
             @foreach($comics as $comic)
-            <tr>
-                <td scope="row">{{$comic->id}}</td>
-                <td>{{$comic->title}}</td>
-                <td>{{$comic->description}}</td>
-                <td>{{$comic->art_by}}</td>
-                <td>{{$comic->written_by}}</td>
-                <td>{{$comic->price}}</td>
-                <td>{{$comic->release_date}}</td>
-                <td>{{$comic->cover}}</td>
-                <td>
-                    @if($comic->availability === 1)
-                    available
-                        @else
+                <tr>
+                    <td scope="row">{{$comic->id}}</td>
+                    <td>{{$comic->title}}</td>
+                    <td>{{$comic->description}}</td>
+                    <td>{{$comic->art_by}}</td>
+                    <td>{{$comic->written_by}}</td>
+                    <td>{{$comic->price}}</td>
+                    <td>{{$comic->release_date}}</td>
+                    <td>{{$comic->cover}}</td>
+                    <td>
+                        @if($comic->availability === 1)
+                            available
+
+                            @else
                             not available
-                    @endif
-                </td>
-            </tr>
+                        @endif
+                    </td>
+                </tr>
             @endforeach
         </tbody>
     </table>

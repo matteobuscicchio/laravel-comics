@@ -18,7 +18,7 @@
         <div class="col-md-8">
             <div class="card">
                 <ul class="list-group">
-                    <li class="list-group-item active text-center"><a href="{{ route('admin.comics.index') }}" class="text-secondary">Comics</a></li>
+                    <li class="list-group-item active text-center"><a href="{{ route('admin.comics.index') }}" class="text-white">Comics</a></li>
                 </ul>
             </div>
         </div>
