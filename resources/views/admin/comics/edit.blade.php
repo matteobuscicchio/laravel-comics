@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.comics.update')}}" method="put" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="container">
@@ -43,7 +43,7 @@
                 </div>
                                 
                 <div class="form-group row">
-                    <label for="page_content" class="col-sm-1-12 col-form-label text-info">Page content</label>
+                    <label for="page_content" class="col-sm-1-12 col-form-label text-info">Page count</label>
                     <div class="col-md-12-12 col-md-12">
                         <input type="text" class="form-control" name="page_content" value="{{$comic->page_content}}">
                     </div>
