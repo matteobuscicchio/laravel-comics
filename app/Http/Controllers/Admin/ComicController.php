@@ -96,7 +96,6 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         //
-        Storage::delete($comic->cover);
         $data = $request->validate([
             'title' => 'nullable',
             'description' => 'nullable',
@@ -107,8 +106,11 @@ class ComicController extends Controller
             'page_content' => 'nullable',
             'rating' => 'nullable'
         ]);
-        $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
-        $data['cover'] = $cover;
+        if ($request->cover) {
+            Storage::delete($comic->cover);
+            $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
+            $data['cover'] = $cover;
+        }
         $comic->update($data);
         return redirect()->route('admin.comics.show', $comic);
     }
