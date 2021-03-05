@@ -14,16 +14,20 @@
             <p class="card-text">{{$comic->slug}}</p>
 
             <h4 class="text-info">Cover</h4>
-            <span>
                 @if ($comic->cover)
-                {{$comic->cover}}
+                    <img src="{{asset('storage/' . $comic->cover )}}" alt="">
+                    <p>@else
+                    N/A</p>
+                @endif
+
+            <h4 class="text-info">Availability</h4>
+            <p>
+                @if ($comic->availability == 1)
+                    avaiable
                 @else
                 N/A
                 @endif
-            </span>
-
-            <h4 class="text-info">Availability</h4>
-            <p class="card-text">{{$comic->availability}}</p>
+            </p>
 
             <h2 class="text-primary">Talent</h2>
             <h4 class="text-info">Artist</h4>

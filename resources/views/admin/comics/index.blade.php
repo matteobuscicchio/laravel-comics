@@ -4,15 +4,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>comic id</th>
-                <th>comic title</th>
-                <th>description</th>
-                <th>artist</th>
-                <th>writer</th>
-                <th>price</th>
-                <th>release dete</th>
-                <th>cover</th>
-                <th>availability</th>
+                <th>Comic ID</th>
+                <th>Comic title</th>
+                <th>Artist</th>
+                <th>Writer</th>
+                <th>Price</th>
+                <th>Release dete</th>
+                <th>Avaiability</th>
             </tr>
         </thead>
         <tbody>
@@ -20,18 +18,16 @@
                 <tr>
                     <td scope="row">{{$comic->id}}</td>
                     <td>{{$comic->title}}</td>
-                    <td>{{$comic->description}}</td>
                     <td>{{$comic->art_by}}</td>
                     <td>{{$comic->written_by}}</td>
                     <td>{{$comic->price}}</td>
                     <td>{{$comic->release_date}}</td>
-                    <td>{{$comic->cover}}</td>
-                    <td> <!-- availability -->
+                    <td> <!-- avaiability -->
                         @if($comic->availability === 1)
-                            available
+                            avaiable
 
                             @else
-                            not available
+                            not avaiable
                         @endif
                     </td>
                     <td>
