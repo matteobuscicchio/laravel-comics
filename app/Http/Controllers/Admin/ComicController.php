@@ -30,6 +30,7 @@ class ComicController extends Controller
     public function create()
     {
         //
+        return view('admin.comics.create');
     }
 
     /**
@@ -41,21 +42,24 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
-        $data = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'cover' => 'nullable | image',
-            'availability' => 'required',
-            'price' => 'required',
-            'trim_size' => 'required',
-            'page_content' => 'required',
-            'rating' => 'required'
-        ]);
-        $cover = Storage::put('public')->put('comic_imgs', $request->cover);
-        $data['cover'] = $cover;
-        Comic:create('$data');
-        $new_comic = Comic::all();
-        return redirect()->route('admin.comics.show', $new_comic);
+        $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
+        $newComic = new Comic;
+        $newComic->title = $request->title;
+        $newComic->description = $request->description;
+        $newComic->slug = Str::slug($newComic->title);
+        $newComic->cover = $cover;
+        $newComic->availability = $request->availability;
+        $newComic->art_by = $request->art_by;
+        $newComic->written_by = $request->written_by;
+        $newComic->series = $request->series;
+        $newComic->price = $request->price;
+        $newComic->release_date = $request->release_date;
+        $newComic->volume = $request->volume;
+        $newComic->trim_size = $request->trim_size;
+        $newComic->page_content = $request->page_content;
+        $newComic->rating = $request->rating;
+        $newComic->save();
+        return redirect()->route('admin.comics.index');
     }
 
     /**
@@ -96,7 +100,7 @@ class ComicController extends Controller
         $data = $request->validate([
             'title' => 'nullable',
             'description' => 'nullable',
-            'cover' => 'nullable | max:1000',
+            'cover' => 'mimes:jpg,png,jpeg | nullable |  max:1000',
             'availability' => 'nullable',
             'price' => 'nullable',
             'trim_size' => 'nullable',

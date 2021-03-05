@@ -14,7 +14,7 @@ class ComicSeeder extends Seeder
     public function run(Faker $faker)
     {
         //
-        for ($i=0; $i < 5 ; $i++) { 
+        for ($i=0; $i < 6 ; $i++) { 
             $newComic = new Comic();
             $newComic->title = $faker->words(5, true);
             $newComic->description = $faker->text(300);

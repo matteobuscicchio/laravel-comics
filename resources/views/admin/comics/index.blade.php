@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <h1>All Comics</h1>
+    <ul class="list-group">
+        <li class="list-group-item active text-center"><a class="text-white" href="{{ route('admin.comics.create') }}">Create New Item</a></li>
+    </ul>
     <table class="table">
         <thead>
             <tr>
