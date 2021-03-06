@@ -6,3 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+
+
+// corpo pagina
+@import 'partials/_common.scss';
+
+// header & nav
+@import 'partials/_header.scss';
+
+// main
+// COMIC INDEX
+@import 'main_partials/_main.scss';
+//  COMIC SHOW
+@import 'show_partials/_main.scss';
+
+// footer
+@import 'partials/_footer.scss';

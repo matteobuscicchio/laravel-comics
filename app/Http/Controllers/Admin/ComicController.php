@@ -42,23 +42,30 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
-        $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
-        $newComic = new Comic;
-        $newComic->title = $request->title;
-        $newComic->description = $request->description;
-        $newComic->slug = Str::slug($newComic->title);
-        $newComic->cover = $cover;
-        $newComic->availability = $request->availability;
-        $newComic->art_by = $request->art_by;
-        $newComic->written_by = $request->written_by;
-        $newComic->series = $request->series;
-        $newComic->price = $request->price;
-        $newComic->release_date = $request->release_date;
-        $newComic->volume = $request->volume;
-        $newComic->trim_size = $request->trim_size;
-        $newComic->page_content = $request->page_content;
-        $newComic->rating = $request->rating;
-        $newComic->save();
+        $request['slug'] = Str::slug($request->title);
+        $data = $request->validate([
+            'title' => 'required',
+            'description' => 'nullable',
+            'slug' => 'required',
+            'cover' => 'mimes:jpg,png,jpeg | nullable |  max:1000',
+            'availability' => 'nullable',
+            'art_by' => 'nullable',
+            'written_by' => 'nullable',
+            'series' => 'nullable',
+            'price' => 'required',
+            'release_date' => 'nullable',
+            'volume' => 'nullable',
+            'trim_size' => 'nullable',
+            'page_content' => 'nullable',
+            'rating' => 'nullable'
+        ]);
+        if ($request->cover) {
+            $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
+            $data['cover'] = $cover;
+        };
+        Comic::create($data);
+        $new_comic = Comic::all();
+
         return redirect()->route('admin.comics.index');
     }
 
@@ -110,7 +117,7 @@ class ComicController extends Controller
             Storage::delete($comic->cover);
             $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
             $data['cover'] = $cover;
-        }
+        };
         $comic->update($data);
         return redirect()->route('admin.comics.show', $comic);
     }

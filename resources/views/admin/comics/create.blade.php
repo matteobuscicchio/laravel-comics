@@ -1,17 +1,22 @@
 @extends('layouts.app')
+@section('title')
+Create new Comic
+@endsection
 @section('content')
-<h1>nuovo elemento</h1>
 <form action="{{ route('admin.comics.store') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="container">
-
+        <span>* campo obligatorio</span> 
         {{-- title --}}
         <div class="form-group row">
-            <label for="title" class="col-sm-1-12 col-form-label text-info">Title</label>
+            <label for="title" class="col-sm-1-12 col-form-label text-info">Title*</label>
             <div class="col-md-12-12 col-md-12">
                 <input type="text" class="form-control" name="title" value="">
             </div>
+            @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- description --}}
@@ -26,10 +31,10 @@
         <div class="form-group">
             <label for="cover">Load Comic Poster/Cover</label>
             <input type="file" class="form-control-file" name="cover" id="cover" placeholder="" aria-describedby="fileHelpId">
+            @error('cover')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
-        @error('cover')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
         
         {{-- avaiability --}}
         <div class="form-group row">
@@ -71,15 +76,18 @@
 
         {{-- price --}}
         <div class="form-group row">
-            <label for="price" class="col-sm-1-12 col-form-label text-info">Price</label>
+            <label for="price" class="col-sm-1-12 col-form-label text-info">Price*</label>
             <div class="col-md-12-12 col-md-12">
                 <input type="text" class="form-control" name="price" value="">
             </div>
+            @error('price')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- release_date --}}
         <div class="form-group row">
-            <label for="release_date" class="col-sm-1-12 col-form-label text-info">release_date</label>
+            <label for="release_date" class="col-sm-1-12 col-form-label text-info">Release date</label>
             <div class="col-md-12-12 col-md-12">
                 <input type="date" class="form-control" name="release_date" value="">
             </div>
@@ -87,7 +95,7 @@
         
         {{-- volume --}}
         <div class="form-group row">
-            <label for="volume" class="col-sm-1-12 col-form-label text-info">volume</label>
+            <label for="volume" class="col-sm-1-12 col-form-label text-info">Volume</label>
             <div class="col-md-12-12 col-md-12">
                 <input type="text" class="form-control" name="volume" value="">
             </div>

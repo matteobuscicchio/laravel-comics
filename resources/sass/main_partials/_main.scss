@@ -1,0 +1,127 @@
+// sezione: Main
+
+//sezione:  COMICS & GRAPHIC NOVELS
+.comic_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 600px;
+    background-color: black;
+    color: white;
+    margin: 50px 0;
+    h4 {
+        line-height: 2em;
+        display: block;
+        position: absolute;
+        top: -5%;
+        left: 10%;
+        padding: 0px 15px;
+        background-color: #0282F9;
+    };
+    .cover_card {
+        position: relative;
+        dd {
+            display: block;
+            position: absolute;
+            top: 0;
+            padding: 0 10px;
+            background-color: #0282F9;
+        };
+    };
+    .comic_row {
+        // width: 100%;
+        display: flex;
+        overflow: hidden;
+        .comic_card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 .5vw;
+            inline-size: min-content;
+            a {
+                img {
+                    width: 20vw;
+                };
+            };
+            span {
+                padding-top: 5px;
+                color: white;
+            };
+            span:last-child{
+                color: #0282F9;
+                font-size: 14px;
+            };
+        };
+    };
+}
+
+
+
+// sezione: MUST READS
+.must_read {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    padding: 50px 0;
+    margin: 80px 0;
+    h2{
+        color: #0282F9;
+        position: absolute;
+        padding: 0px 15px;
+        top: -20%;
+        left: 10%;
+    };
+    .comic_row{
+        display: flex;
+        width: 80%;
+        margin: auto;
+        .must_card{
+            padding: 0 5px;
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            img{
+                width: 100%;
+            };
+            p {
+                color: #0282F9;
+                font-size: 14px;
+            };
+        };
+    };
+}
+
+
+
+// sezione: CURRENT SERIES
+.current_series {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    color: white;
+    padding: 50px 0;
+    h2{
+        position: absolute;
+        top: -20%;
+        left: 10%;
+        padding: 0px 15px;
+        background-color: #0282F9;
+    };
+    .comic_row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+        .serie_card {
+            width: 15%;
+            img {
+                width: 100%;
+            };
+        };
+    };
+}

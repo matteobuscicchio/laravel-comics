@@ -1,0 +1,88 @@
+// sezione: show comic
+.show {
+    text-transform: capitalize;
+    .jumbotron {
+        height: 370px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+    };
+    .header_show{
+        height: 80px;
+        background-color: #0282F9;
+        position: relative;
+        .show_cover {
+            position: absolute;
+            bottom: 0%;
+            left: 10%;
+            height: 310px;
+            width: 80%;
+            margin: auto;
+            dd {
+                display: block;
+                position: absolute;
+                top: 0;
+                padding: 0 10px;
+                background-color: #0282F9;
+            };
+        };
+    };
+    .generl_info_container {
+        width: 80%;
+        margin: auto;
+        .info_box{
+            width: 60%;
+            h1{
+                text-transform: uppercase;
+                margin: 50px 0;
+            };
+            .info_price{
+                display: flex;
+                height: 50px;
+                color: white;
+                background-color: #55ba59;
+                .left{
+                    display: flex;
+                    justify-content: space-around;
+                    width: 80%;
+                    line-height: 50px;
+                    border-bottom: 1px solid #357739;
+                    border-right: 1px solid #357739;
+                    span {
+                        text-transform: uppercase;
+                    };
+                };
+                .right {
+                    width: 30%;
+                    text-align: center;
+                    border-bottom: 1px solid #357739;
+                    line-height: 50px;
+                };
+            };
+            p{
+                margin: 35px 0;
+            };
+        };
+    };
+    .comic_details {
+        background-color: #cecece;
+        .details_container{
+            display: flex;
+            width: 80%;
+            margin: auto;
+            .talent{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+            };
+            .specs{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                span:first-child {
+                    text-transform: uppercase;
+                };
+            };
+        };
+    };
+}

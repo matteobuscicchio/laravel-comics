@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+Edit: {{$comic->title}}
+@endsection
 @section('content')
     <form action="{{ route('admin.comics.update', $comic) }}" method="post" enctype="multipart/form-data">
         @csrf

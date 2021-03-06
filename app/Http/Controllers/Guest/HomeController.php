@@ -11,8 +11,9 @@ class HomeController extends Controller
     //
 	public function home()
 	{
+    $jumbotron = Comic::take(5)->get();
 		$comics = Comic::all();
-		return view('guest.home', compact('comics'));
+		return view('guest.home', compact('comics', 'jumbotron'));
 	}
 
     public function show(Comic $comic)

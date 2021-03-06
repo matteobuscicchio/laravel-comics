@@ -1,0 +1,61 @@
+// sezione: Header 
+.upper_nav {
+    height: 40px;
+    background-color: #0282F9;
+    .upper_nav_conteiner{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: auto;
+        height: 100%;
+        .nav_logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 14%;
+            border-left: 1px solid white;
+            transform: skewX(-15deg);
+            img {
+                width: 50%;
+                transform: skewX(15deg);
+            };
+        };
+        .nav_logo:first-child {
+            background-color: white;
+        }
+    }
+}
+
+.lower_nav {
+    display: flex;
+    align-items: center;
+    height: 110px;
+    border-bottom: 1px solid #cecece;
+    .lower_nav_conteiner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        img {
+            height:80px;
+        };
+        ul {
+            height: 100%;
+            display: flex;
+            list-style: none;
+            li {
+                margin: 0 20px ;
+                font-size: 16px;
+            };
+        };
+        .search_section{
+            padding-left: 20px;
+            margin-left: 100px;
+            border-bottom: 2px #00a9d9 solid;
+            .search_icon {
+                height:15px;
+            };
+        };
+    };
+}

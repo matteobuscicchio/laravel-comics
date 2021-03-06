@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+Admin Control Pannel
+@endsection
 @section('content')
     <h1>All Comics</h1>
     <ul class="list-group">

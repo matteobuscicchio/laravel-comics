@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+Show: {{$comic->title}}
+@endsection
 @section('content')
     <div class="card">
         <img class="card-img-top" src="holder.js/100x180/" alt="">
