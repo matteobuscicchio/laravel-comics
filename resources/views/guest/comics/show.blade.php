@@ -3,7 +3,7 @@
 Comic | {{$comic->title}}
 @endsection
 @section('content')
-<div class="show">
+<main class="show">
 
     <div class="jumbotron" style="background-image: url('../storage/posts_img/jumbo.jpg')">
     
@@ -52,13 +52,18 @@ Comic | {{$comic->title}}
         <div class="details_container">
             <div class="talent">
                 <h3>Talent</h3>
-                <span>Artist: {{$comic->art_by}}</span>
-                <span>Wrighter: {{$comic->written_by}}</span>
+                <span>Artist:
+                    <span>{{$comic->art_by}}</span>
+                </span>
+                <span>Wrighter:
+                    <span>{{$comic->written_by}}</span>
+                </span>
             </div>
     
             <div class="specs">
                 <h3>Specs</h3>
-                <span> Series: <span style="text-transform: uppercase;">{{$comic->series}}</span>
+                <span> Series:
+                    <span>{{$comic->series}}</span>
                 </span>
                 <span>U.S Price: {{$comic->price}}</span>
                 <span>On Sale Date: {{$comic->release_date}}</span>
@@ -69,6 +74,6 @@ Comic | {{$comic->title}}
             </div>
         </div>
     </section>
-</div>
+</main>
 
 @endsection

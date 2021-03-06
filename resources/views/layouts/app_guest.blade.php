@@ -19,31 +19,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-{{-- <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Welcome Page
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body> --}}
 <body>
     <header>
         <div class="upper_nav">
@@ -64,8 +39,8 @@
                     <img src="{{asset('img/logo5.svg')}}" alt="">
                 </div>
             </nav>
-
         </div>
+
         <div class="lower_nav">
             <nav class="container lower_nav_conteiner">
                 <a href="/">
@@ -92,30 +67,30 @@
     </header>
 
     @yield('content')
+   
 
     {{-- sezione: Footer --}}
-    <div class="uppper_footer">
-        <div class="services_wrap">
-            <div class="service_box">
-                <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-DCUI.svg" alt="">
-                <span>digital comics</span>
-            </div>
-            <div class="service_box">
-                <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-DCshop.svg" alt="">
-                <span>dc merchandise</span>
-            </div>
-            <div class="service_box">
-                <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-subscription.svg" alt="">
-                <span>print subscriptions</span>
-            </div>
-            <div class="service_box">
-                <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-locator.svg" alt="">
-                <span>comic shop locator</span>
+    <footer>
+        <div class="uppper_footer">
+            <div class="services_wrap">
+                <div class="service_box">
+                    <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-DCUI.svg" alt="">
+                    <span>digital comics</span>
+                </div>
+                <div class="service_box">
+                    <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-DCshop.svg" alt="">
+                    <span>dc merchandise</span>
+                </div>
+                <div class="service_box">
+                    <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-subscription.svg" alt="">
+                    <span>print subscriptions</span>
+                </div>
+                <div class="service_box">
+                    <img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/images/buy-bar-locator.svg" alt="">
+                    <span>comic shop locator</span>
+                </div>
             </div>
         </div>
-    </div>
-
-    <footer>
 
         <div class="lower_footer">
 
@@ -176,7 +151,7 @@
         </div>
 
         <div class="footer_privacy">
-            <p>All Site Content TM and © 2020 DC Entertainment, unless otherwise noted here. All rights reserved. <br> Cookies Settings</p>
+            <p>All Site Content TM and © 2020 DC Entertainment, unless otherwise <span>noted here</span>. All rights reserved. <br> <span>Cookies Settings</span></p>
         </div>
 
         <div class="social">

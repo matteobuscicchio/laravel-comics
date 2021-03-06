@@ -21,7 +21,7 @@ class ComicSeeder extends Seeder
             $newComic->slug = Str::slug($newComic->title);
             $newComic->art_by = $faker->name();
             $newComic->written_by = $faker->name();
-            $newComic->series = $faker->randomDigitNotNull();
+            $newComic->series = $faker->words(5, true);
             $newComic->price = $faker->randomFloat(2, 2, 99);
             $newComic->release_date = $faker->dateTime();
             $newComic->volume = $faker->randomDigitNotNull();

@@ -3,27 +3,25 @@
 All Comics
 @endsection
 @section('content')
-{{-- sezione: COMICS & GRAPHIC NOVELS --}}
+<main>
+    {{-- sezione: COMICS & GRAPHIC NOVELS --}}
     <section class="comic_container">
         <h4>comics & graphic novels</h4>
         <div class="comic_row">
             @foreach($jumbotron as $comic)
                 <div class="comic_card">
-                    <div class="cover_card">
-                        <a href="{{ route('comic', $comic) }}">
-                            <img src="{{asset('storage/' . $comic->cover )}}" alt="">
-                        </a>
+                    <a class="link" href="{{ route('comic', $comic) }}">
                         <dd>comik book</dd>
-                    </div>
-                    <span>{{$comic->title}}</span>
-                    <span><!-- avaiability -->
+                        <img src="{{asset('storage/' . $comic->cover )}}" alt="">
+                    </a>
+                    <div>{{$comic->title}}</div>
+                    <div><!-- avaiability -->
                         @if($comic->availability === 1)
                             Avaiable Now
-
                             @else
                                 Not Avaiable
                         @endif
-                    </span>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -56,4 +54,5 @@ All Comics
             @endforeach --}}
         </div>
     </section>
+</main>
 @endsection

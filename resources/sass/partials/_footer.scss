@@ -1,23 +1,4 @@
 // sezione: footer
-.uppper_footer {
-    background-color: #0282F9;
-    height: 150px;
-    z-index: 100;
-    position: relative;
-    top: 70px;
-    .services_wrap {
-        width: 80%;
-        height: 100%;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .service_box {
-            color: white;
-            z-index: 100;
-        };
-    };
-}
 
 footer {
     position: relative;
@@ -26,17 +7,39 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 460px;
+    // height: 460px;
+    .uppper_footer {
+        background-color: #0282F9;
+        height: 120px;
+        z-index: 100;
+        // position: relative;
+        // top: 0px;
+        .services_wrap {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .service_box {
+                color: white;
+                z-index: 100;
+                img {
+                    height:50px;
+                }
+            };
+        };
+    }
     .lower_footer{
         position: relative;
-        top: 70px;
         width: 100%;
-        margin: 20px auto;
+        margin-top: 25px;
         .footer_container {
             margin-left: 30px;
             width: 50%;
             display: flex;
             flex-wrap: wrap;
+            // overflow: hidden;
             .footer_link {
                 margin-left: 47px;
                 width: 21%;
@@ -58,20 +61,23 @@ footer {
 
     .footer_logo {
         position: absolute;
-        max-height: 215%;
-        top: -65%;
+        max-height: 200%;
+        top: -52%;
         z-index: 0;
         right: 5%;
     };
 
-    .footer_privacy {      
+    .footer_privacy {
         position: relative;
-        top: 50px;
-        left: 77px;
+        left: 75px;
+        width: 50%;
         text-transform: capitalize;
         color: #959595;
         font-size: 11px;
         line-height: 15px;
+        span{
+            color:#0282F9;
+        }
     };
 
     .social{
@@ -80,8 +86,7 @@ footer {
         height: 80px;
         width: 100%;
         background-color: #303030;
-        position: absolute;
-        bottom: 0;
+        position: relative;
         .social_container {
             display: flex;
             width: 85%;
