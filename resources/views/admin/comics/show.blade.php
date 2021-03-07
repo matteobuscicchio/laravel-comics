@@ -30,6 +30,7 @@ Show: {{$comic->title}}
             <p class="card-text text-danger">{{$comic->description}}</p>
             
             @if ($comic->jumbotron)
+            <h4 class="text-info">Jumbotron</h4>
             <div class="jumbotron" style="background-image: url( {{asset('storage/' . $comic->jumbotron )}} )">
                 @else
                 <h4 class="text-info">Jumbotron</h4>

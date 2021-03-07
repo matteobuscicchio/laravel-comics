@@ -12,9 +12,13 @@ Admin Control Pannel
 
 @section('content')
     <h1>All Comics</h1>
-    <ul class="list-group">
-        <li class="list-group-item active text-center"><a class="text-white" href="{{ route('admin.comics.create') }}">Create New Comic</a></li>
-    </ul>
+    <a class="text-white" href="{{ route('admin.comics.create') }}">
+        <ul class="list-group">
+            <li class="list-group-item active text-center">
+                Create New Comic
+            </li>
+        </ul>
+    </a>
     <table class="table">
         <thead>
             <tr>
@@ -41,7 +45,6 @@ Admin Control Pannel
                     <td> <!-- avaiability -->
                         @if($comic->availability === 1)
                             avaiable
-
                             @else
                             not avaiable
                         @endif
@@ -55,6 +58,12 @@ Admin Control Pannel
                             <div class="dropdown-menu" aria-labelledby="triggerId">
                                 <a class="dropdown-item" href="{{ route('admin.comics.edit', $comic) }}">Edit</a>
                                 <a class="dropdown-item" href="{{ route('admin.comics.show', $comic) }}">Show</a>
+
+                                {{-- <form class="dropdown-item" action="{{route('admin.comics.destroy', $comic->slug )}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                   <button type="submit" class="btn btn-success">delete</button>
+                                </form> --}}
                             </div>
                         </div>
                     </td>

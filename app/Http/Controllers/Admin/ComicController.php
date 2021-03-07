@@ -48,6 +48,7 @@ class ComicController extends Controller
             'description' => 'nullable',
             'slug' => 'required',
             'cover' => 'mimes:jpg,png,jpeg | nullable |  max:1000',
+            'jumbotron' => 'mimes:jpg,png,jpeg | nullable |  max:1000',
             'availability' => 'nullable',
             'art_by' => 'nullable',
             'written_by' => 'nullable',
@@ -63,12 +64,16 @@ class ComicController extends Controller
             $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
             $data['cover'] = $cover;
         };
+        if ($request->jumbotron) {
+            $jumbotron = Storage::disk('public')->put('comic_imgs', $request->jumbotron);
+            $data['jumbotron'] = $jumbotron;
+        };
         Comic::create($data);
         $new_comic = Comic::all();
 
         $comic = $request;
+        // dd($comic);
         return view('admin.comics.show', compact('comic'));
-
     }
 
     /**
