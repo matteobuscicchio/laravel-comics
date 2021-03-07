@@ -31,14 +31,14 @@ All Comics
     <section class="must_read">
         <h2>must reads</h2>
         <div class="comic_row">
-            {{-- @foreach($musts as $must)
+            @foreach($articles as $article)
                 <div class="must_card">
-                    <img src="{{asset('storage/' . $must->cover )}}" alt="">
-                    <p>{{$must->eyelet}}</p>
-                    <span>{{$must->title}}</span>
-                    <p>{{$must->description}}</p>
+                    <img src="{{asset('storage/' . $article->cover )}}" alt="">
+                    <p>{{$article->eyelet}}</p>
+                    <span>{{$article->title}}</span>
+                    <p>{{$article->description}}</p>
                 </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </section>
     

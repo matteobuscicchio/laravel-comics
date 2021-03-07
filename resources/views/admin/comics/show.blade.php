@@ -20,27 +20,27 @@ Show: {{$comic->title}}
             
             <h4 class="text-info">Cover</h4>
             @if ($comic->cover)
-                <img src="{{asset('storage/' . $comic->cover )}}" alt="">
-                <p>@else
-                N/A</p>
+                <img src="{{asset('storage/' . $comic->cover )}}" alt="l'immagine è presente ma non stata caricata">
+                @else
+                <p class="card-text text-danger">N/A</p>
             @endif
             <h4 class="text-info">Title</h4>
-            <p class="card-title">{{$comic->title}}</p>
+            <p class="card-title text-danger">{{$comic->title}}</p>
             <h4 class="text-info">Description</h4>
-            <p class="card-text">{{$comic->description}}</p>
+            <p class="card-text text-danger">{{$comic->description}}</p>
             
             @if ($comic->jumbotron)
             <div class="jumbotron" style="background-image: url( {{asset('storage/' . $comic->jumbotron )}} )">
                 @else
                 <h4 class="text-info">Jumbotron</h4>
-                <p>N/A</p>
+                <p class="card-text text-danger">N/A</p>
                 @endif
                 
                 <h4 class="text-info">Slug</h4>
-                <p class="card-text">{{$comic->slug}}</p>
+                <p class="card-text text-danger">{{$comic->slug}}</p>
 
                 <h4 class="text-info">Availability</h4>
-                <p>
+                <p class="card-text text-danger">
                     @if ($comic->availability == 1)
                         avaiable
                     @else
@@ -50,26 +50,26 @@ Show: {{$comic->title}}
     
                 <h2 class="text-primary">Talent</h2>
                 <h4 class="text-info">Artist</h4>
-                <p class="card-text">{{$comic->art_by}}</p>
+                <p class="card-text text-danger">{{$comic->art_by}}</p>
     
                 <h4 class="text-info">Writer</h4>
-                <p class="card-text">{{$comic->written_by}}</p>
+                <p class="card-text text-danger">{{$comic->written_by}}</p>
     
                 <h2 class="text-primary">Specs</h2>
                 <h4 class="text-info">Series</h4>
-                <p class="card-text">{{$comic->series}}</p>
+                <p class="card-text text-danger">{{$comic->series}}</p>
     
                 <h4 class="text-info">Price</h4>
-                <p class="card-text">{{$comic->price}}</p>
+                <p class="card-text text-danger">{{$comic->price}}</p>
     
                 <h4 class="text-info">Release date</h4>
-                <p class="card-text">{{$comic->release_date}}</p>
+                <p class="card-text text-danger">{{$comic->release_date}}</p>
     
                 <h4 class="text-info">Volume</h4>
-                <p class="card-text">{{$comic->volume}}</p>
+                <p class="card-text text-danger">{{$comic->volume}}</p>
     
                 <h4 class="text-info">Trim size</h4>
-                <span>
+                <span class="card-text text-danger">
                     @if ($comic->trim_size)
                     {{$comic->trim_size}}
                     @else
@@ -78,7 +78,7 @@ Show: {{$comic->title}}
                 </span>
     
                 <h4 class="text-info">page content</h4>
-                <span>
+                <span class="card-text text-danger">
                     @if ($comic->page_content)
                     {{$comic->page_content}}
                     @else
@@ -87,7 +87,7 @@ Show: {{$comic->title}}
                 </span>
     
                 <h4 class="text-info">Rating</h4>
-                <span>
+                <span class="card-text text-danger">
                     @if ($comic->rating)
                     {{$comic->rating}}
                     @else
