@@ -11071,7 +11071,6 @@ header .lower_nav .lower_nav_conteiner .search_section li .search_icon {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #0282F9;
 }
 
 .comic_container .comic_row .comic_card .link dd {
@@ -11108,7 +11107,7 @@ header .lower_nav .lower_nav_conteiner .search_section li .search_icon {
   color: #0282F9;
   position: absolute;
   padding: 0px 15px;
-  top: -20%;
+  top: 0%;
   left: 10%;
 }
 
@@ -11129,9 +11128,13 @@ header .lower_nav .lower_nav_conteiner .search_section li .search_icon {
   width: 100%;
 }
 
-.must_read .comic_row .must_card p {
-  color: #0282F9;
+.must_read .comic_row .must_card span {
   font-size: 14px;
+  color: #0282F9;
+}
+
+.must_read .comic_row .must_card p {
+  text-transform: capitalize;
 }
 
 .current_series {

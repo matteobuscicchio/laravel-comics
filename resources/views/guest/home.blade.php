@@ -34,8 +34,8 @@ All Comics
             @foreach($articles as $article)
                 <div class="must_card">
                     <img src="{{asset('storage/' . $article->cover )}}" alt="">
-                    <p>{{$article->eyelet}}</p>
-                    <span>{{$article->title}}</span>
+                    <span><strong>{{$article->eyelet}}</strong></span>
+                    <h4><strong>{{$article->title}}</strong></h4>
                     <p>{{$article->description}}</p>
                 </div>
             @endforeach
