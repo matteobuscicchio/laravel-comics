@@ -66,7 +66,9 @@ class ComicController extends Controller
         Comic::create($data);
         $new_comic = Comic::all();
 
-        return redirect()->route('admin.comics.index');
+        $comic = $request;
+        return view('admin.comics.show', compact('comic'));
+
     }
 
     /**
@@ -107,6 +109,7 @@ class ComicController extends Controller
             'title' => 'nullable',
             'description' => 'nullable',
             'cover' => 'mimes:jpg,png,jpeg | nullable |  max:1000',
+            'jumbotron' => 'mimes:jpg,png,jpeg | nullable |  max:1000',
             'availability' => 'nullable',
             'price' => 'nullable',
             'trim_size' => 'nullable',
@@ -117,6 +120,11 @@ class ComicController extends Controller
             Storage::delete($comic->cover);
             $cover = Storage::disk('public')->put('comic_imgs', $request->cover);
             $data['cover'] = $cover;
+        };
+        if ($request->jumbotron) {
+            Storage::delete($comic->jumbotron);
+            $jumbotron = Storage::disk('public')->put('comic_imgs', $request->jumbotron);
+            $data['jumbotron'] = $jumbotron;
         };
         $comic->update($data);
         return redirect()->route('admin.comics.show', $comic);
@@ -131,5 +139,7 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         //
+        $comic->delete();
+        return redirect()->route('admin.comics.index');
     }
 }

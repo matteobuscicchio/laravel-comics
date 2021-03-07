@@ -1,11 +1,19 @@
 @extends('layouts.app')
+
 @section('title')
 Admin Control Pannel
 @endsection
+
+@section('back')
+<a class="navbar-brand" href="{{ url('/admin') }}">
+    Main Page
+</a>
+@endsection
+
 @section('content')
     <h1>All Comics</h1>
     <ul class="list-group">
-        <li class="list-group-item active text-center"><a class="text-white" href="{{ route('admin.comics.create') }}">Create New Item</a></li>
+        <li class="list-group-item active text-center"><a class="text-white" href="{{ route('admin.comics.create') }}">Create New Comic</a></li>
     </ul>
     <table class="table">
         <thead>
@@ -17,6 +25,8 @@ Admin Control Pannel
                 <th>Price</th>
                 <th>Release dete</th>
                 <th>Avaiability</th>
+                <th></th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -45,10 +55,15 @@ Admin Control Pannel
                             <div class="dropdown-menu" aria-labelledby="triggerId">
                                 <a class="dropdown-item" href="{{ route('admin.comics.edit', $comic) }}">Edit</a>
                                 <a class="dropdown-item" href="{{ route('admin.comics.show', $comic) }}">Show</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Delete</a>
                             </div>
                         </div>
+                    </td>
+                    <td>
+                        <form action="{{route('admin.comics.destroy', $comic->slug )}}" method="post">
+                            @csrf
+                            @method('delete')
+                           <button type="submit" class="btn btn-success">delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

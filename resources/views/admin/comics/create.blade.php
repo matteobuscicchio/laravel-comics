@@ -1,13 +1,25 @@
 @extends('layouts.app')
+
 @section('title')
 Create new Comic
 @endsection
+
+@section('back')
+<a class="navbar-brand" href="{{ url('/admin') }}">
+    Main Page
+</a>
+<a class="navbar-brand" href="{{ url('/admin/comics') }}">
+    Back
+</a>
+@endsection
+
 @section('content')
 <form action="{{ route('admin.comics.store') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="container">
         <span>* campo obligatorio</span> 
+
         {{-- title --}}
         <div class="form-group row">
             <label for="title" class="col-sm-1-12 col-form-label text-info">Title*</label>
@@ -30,8 +42,17 @@ Create new Comic
         {{-- cover --}}
         <div class="form-group">
             <label for="cover">Load Comic Poster/Cover</label>
-            <input type="file" class="form-control-file" name="cover" id="cover" placeholder="" aria-describedby="fileHelpId">
+            <input type="file" class="form-control-file" name="cover" aria-describedby="fileHelpId">
             @error('cover')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- jumbotron --}}
+        <div class="form-group">
+            <label for="jumbotron">Load Comic jumbotron</label>
+            <input type="file" class="form-control-file" name="jumbotron" aria-describedby="fileHelpId">
+            @error('jumbotron')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

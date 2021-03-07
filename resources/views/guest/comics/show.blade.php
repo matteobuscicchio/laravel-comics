@@ -5,16 +5,10 @@ Comic | {{$comic->title}}
 @section('content')
 <main class="show">
 
-    <div class="jumbotron" style="background-image: url('../storage/posts_img/jumbo.jpg')">
-    
-    </div>
+    <div class="jumbotron" style="background-image: url( {{asset('storage/' . $comic->jumbotron )}} )"></div>
     
     <div class="header_show">
         <div class="container">
-            {{-- <div class="show_cover">
-                <img src="{{asset('storage/' . $comic->cover )}}" alt="">
-            </div> --}}
-    
             <div class="show_cover">
                 <a href="{{ route('comic', $comic) }}">
                     <img src="{{asset('storage/' . $comic->cover )}}" alt="">

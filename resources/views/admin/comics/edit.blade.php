@@ -1,7 +1,18 @@
 @extends('layouts.app')
+
 @section('title')
 Edit: {{$comic->title}}
 @endsection
+
+@section('back')
+<a class="navbar-brand" href="{{ url('/admin') }}">
+    Main Page
+</a>
+<a class="navbar-brand" href="{{ url('/admin/comics') }}">
+    Back
+</a>
+@endsection
+
 @section('content')
     <form action="{{ route('admin.comics.update', $comic) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -29,12 +40,21 @@ Edit: {{$comic->title}}
             {{-- cover --}}
             <div class="form-group">
                 <label for="cover">Load Comic Poster/Cover</label>
-                <input type="file" class="form-control-file" name="cover" id="cover" placeholder="" aria-describedby="fileHelpId">
+                <input type="file" class="form-control-file" name="cover" placeholder="" aria-describedby="fileHelpId">
             </div>
             @error('cover')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
+            {{-- jumbotron --}}
+            <div class="form-group">
+                <label for="jumbotron">Load Comic jumbotron</label>
+                <input type="file" class="form-control-file" name="jumbotron" placeholder="" aria-describedby="fileHelpId">
+            </div>
+            @error('jumbotron')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            
             {{-- price --}}
             <div class="form-group row">
                 <label for="price" class="col-sm-1-12 col-form-label text-info">Price</label>
