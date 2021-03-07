@@ -46,12 +46,12 @@ All Comics
     <section class="current_series">
         <h2>current series</h2>
         <div class="comic_row">
-            {{-- @foreach($series as $serie)
+            @foreach($series as $serie)
                 <div class="serie_card">
                     <img src="{{asset('storage/' . $serie->cover )}}" alt="">
                     <p>{{$serie->title}}</p>
                 </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </section>
 </main>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use App\Comic;
 use App\Articles;
+use App\Series;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,8 @@ class HomeController extends Controller
 	{
 		$jumbotron = Comic::take(5)->get();
 		$articles = Articles::take(3)->get();
-		return view('guest.home', compact('jumbotron','articles'));
+		$series = Series::take(12)->get();
+		return view('guest.home', compact('jumbotron','articles', 'series'));
 	}
 
 	public function show(Comic $comic)

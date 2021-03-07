@@ -35,6 +35,14 @@
                         </span>
                     </div>
                 </a>
+
+                <a href="{{ route('admin.series.index') }}" class="text-white">
+                    <div class="list-group">
+                        <span class="list-group-item active text-center">
+                            Series
+                        </span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ Admin Control Pannel
 
 @section('content')
     <h1>All Articles</h1>
-    <a class="text-white" href="{{ route('admin.articles.create') }}">
+    <a class="text-white" href="{{ route('admin.series.create') }}">
         <ul class="list-group">
             <li class="list-group-item active text-center">
                 Create New Article
@@ -22,17 +22,17 @@ Admin Control Pannel
     <table class="table">
         <thead>
             <tr>
-                <th>Article ID</th>
-                <th>Article title</th>
+                <th>Serie ID</th>
+                <th>Serie title</th>
                 <th></th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($articles as $article)
+            @foreach($series as $serie)
                 <tr>
-                    <td scope="row">{{$article->id}}</td>
-                    <td>{{$article->title}}</td>
+                    <td scope="row">{{$serie->id}}</td>
+                    <td>{{$serie->title}}</td>
                     
                     <td>
                         <div class="dropdown open">
@@ -41,13 +41,13 @@ Admin Control Pannel
                                 Option
                             </button>
                             <div class="dropdown-menu" aria-labelledby="triggerId">
-                                <a class="dropdown-item" href="{{ route('admin.articles.edit', $article) }}">Edit</a>
-                                <a class="dropdown-item" href="{{ route('admin.articles.show', $article) }}">Show</a>
+                                <a class="dropdown-item" href="{{ route('admin.series.edit', $serie) }}">Edit</a>
+                                <a class="dropdown-item" href="{{ route('admin.series.show', $serie) }}">Show</a>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <form action="{{route('admin.articles.destroy', $article->slug )}}" method="post">
+                        <form action="{{route('admin.series.destroy', $serie->slug )}}" method="post">
                             @csrf
                             @method('delete')
                            <button type="submit" class="btn btn-success">delete</button>
