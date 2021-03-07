@@ -69,10 +69,7 @@ class ComicController extends Controller
             $data['jumbotron'] = $jumbotron;
         };
         Comic::create($data);
-        $new_comic = Comic::all();
-
-        $comic = $request;
-        // dd($comic);
+        $comic = Comic::orderby('id' , 'desc')->first();
         return view('admin.comics.show', compact('comic'));
     }
 

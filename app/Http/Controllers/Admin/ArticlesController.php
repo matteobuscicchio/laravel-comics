@@ -55,9 +55,7 @@ class ArticlesController extends Controller
             $data['cover'] = $cover;
         };
         Articles::create($data);
-        $new_article = Articles::all();
-
-        $article = $request;
+        $article = Articles::orderby('id' , 'desc')->first();
         return view('admin.articles.show', compact('article'));
     }
 

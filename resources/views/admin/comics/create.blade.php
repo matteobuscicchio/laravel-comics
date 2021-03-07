@@ -109,7 +109,7 @@ Create new Comic
         {{-- release_date --}}
         <div class="form-group row">
             <label for="release_date" class="col-sm-1-12 col-form-label text-info">Release date</label>
-            <div class="col-md-12-12 col-md-12">
+            <div class="col-md-12-12 col-md-4">
                 <input type="date" class="form-control" name="release_date" value="">
             </div>
         </div>
