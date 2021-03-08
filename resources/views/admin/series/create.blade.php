@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Create new Articles
+Create new Series
 @endsection
 
 @section('back')

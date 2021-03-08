@@ -11,7 +11,7 @@ Admin Control Pannel
 @endsection
 
 @section('content')
-    <h1>All Articles</h1>
+    <h1>All Series</h1>
     <a class="text-white" href="{{ route('admin.series.create') }}">
         <ul class="list-group">
             <li class="list-group-item active text-center">

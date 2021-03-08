@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Show: {{$serie->title}}
+Show: {{$series->title}}
 @endsection
 
 @section('back')
@@ -19,16 +19,16 @@ Show: {{$serie->title}}
             <h2 class="text-primary">General</h2>
             
             <h4 class="text-info">Cover</h4>
-            @if ($serie->cover)
-                <img src="{{asset('storage/' . $serie->cover )}}" alt="l'immagine è presente ma non stata caricata">
+            @if ($series->cover)
+                <img src="{{asset('storage/' . $series->cover )}}" alt="l'immagine è presente ma non stata caricata">
                 <p>@else
                 N/A</p>
             @endif
             <h4 class="text-info">Title</h4>
-            <p class="card-title">{{$serie->title}}</p>
+            <p class="card-title">{{$series->title}}</p>
 
             <h4 class="text-info">Slug</h4>
-            <p class="card-text">{{$serie->slug}}</p>
+            <p class="card-text">{{$series->slug}}</p>
            
         </div>
     </div>

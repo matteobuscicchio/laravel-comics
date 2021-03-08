@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Guest\HomeController@home')->name('home');
 Route::get('comics/{comic}', 'Guest\HomeController@show')->name('comic');
 
-Auth::routes();
+// Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
