@@ -39,7 +39,13 @@ Edit: {{$comic->title}}
             
             {{-- cover --}}
             <div class="form-group">
-                <label for="cover">Load Comic Poster/Cover</label>
+                @if ($comic->cover)
+                    <dd>This is the actual Poster/Cover</dd>
+                    <img src="{{asset('storage/' . $comic->cover )}}" alt="l'immagine è presente ma non stata caricata">
+                @endif
+                <br>
+                <br>
+                <dd for="cover">Load Comic Poster/Cover</dd>
                 <input type="file" class="form-control-file" name="cover" placeholder="" aria-describedby="fileHelpId">
             </div>
             @error('cover')
@@ -48,6 +54,12 @@ Edit: {{$comic->title}}
 
             {{-- jumbotron --}}
             <div class="form-group">
+                @if ($comic->jumbotron)
+                    <dd>This is the actual jumbotron</dd>
+                    <img style="width: 200px;" src="{{asset('storage/' . $comic->jumbotron )}}" alt="l'immagine è presente ma non stata caricata">
+                @endif
+                <br>
+                <br>
                 <label for="jumbotron">Load Comic jumbotron</label>
                 <input type="file" class="form-control-file" name="jumbotron" placeholder="" aria-describedby="fileHelpId">
             </div>
