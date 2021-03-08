@@ -13,6 +13,7 @@ class HomeController extends Controller
 	//
 	public function home()
 	{
+		// $jumbotron = Comic::all();
 		$jumbotron = Comic::take(5)->get();
 		$articles = Articles::take(3)->get();
 		$series = Series::take(12)->get();

@@ -20,7 +20,7 @@ Route::get('comics/{comic}', 'Guest\HomeController@show')->name('comic');
 Auth::routes(['register' => false]);
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'AdminController@index')->name('home');
     Route::resource('comics', 'ComicController');
     Route::resource('articles', 'ArticlesController');
     Route::resource('series', 'SeriesController');
